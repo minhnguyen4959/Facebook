@@ -1,0 +1,135 @@
+.friends-content {
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.main-header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1c1e21;
+}
+
+.find-friends-btn {
+  background-color: #1877f2 !important;
+  color: white !important;
+}
+
+.friend-section {
+  margin-bottom: 30px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.section-header h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1c1e21;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.request-count {
+  background: #e41e3f;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 50%;
+  font-size: 14px;
+}
+
+.see-all {
+  color: #1877f2;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.friend-request, .friend-suggestion {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+}
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: 12px;
+}
+
+.friend-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.username {
+  font-weight: 600;
+  font-size: 16px;
+  color: #1c1e21;
+}
+
+.mutual-friends {
+  color: #65676b;
+  font-size: 14px;
+}
+
+.friend-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.confirm-btn {
+  background-color: #1877f2 !important;
+  color: white !important;
+}
+
+.delete-btn {
+  background-color: #e4e6eb !important;
+  color: #1c1e21 !important;
+}
+
+.add-friend-btn {
+  background-color: #1877f2 !important;
+  color: white !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .friends-content {
+    padding: 15px;
+  }
+
+  .friend-request, .friend-suggestion {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .avatar {
+    margin: 0 auto 12px;
+  }
+
+  .friend-info {
+    margin-bottom: 12px;
+  }
+
+  .friend-actions {
+    width: 100%;
+    justify-content: center;
+  }
+} 

@@ -1,0 +1,160 @@
+.composer {
+  background-color: var(--bg-card);
+  border-radius: 8px;
+  box-shadow: var(--shadow-1);
+  padding: 14px 16px;
+  margin-bottom: 16px;
+}
+
+.composer.dark-mode {
+  background-color: var(--bg-card);
+  color: var(--text-primary);
+}
+
+.composer-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.composer-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.composer-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.composer-input-wrapper {
+  flex: 1;
+}
+
+.composer-input {
+  width: 100%;
+  background-color: var(--bg-hover);
+  border-radius: 20px;
+  padding: 10px 16px;
+  border: none;
+  outline: none;
+  color: var(--text-primary);
+  font-size: 15px;
+}
+
+.composer-input::placeholder {
+  color: var(--text-secondary);
+}
+
+.composer-expanded {
+  margin-bottom: 14px;
+}
+
+.composer-textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: 14px;
+  border: none;
+  outline: none;
+  resize: none;
+  font-size: 15px;
+  background-color: var(--bg-card);
+  color: var(--text-primary);
+}
+
+.composer-textarea::placeholder {
+  color: var(--text-secondary);
+}
+
+.composer-image-preview {
+  position: relative;
+  margin-bottom: 14px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.composer-image-preview img {
+  width: 100%;
+  max-height: 300px;
+  object-fit: contain;
+}
+
+.remove-image-btn {
+  position: absolute !important;
+  top: 8px;
+  right: 8px;
+  background-color: rgba(0, 0, 0, 0.6) !important;
+  color: white !important;
+  border-radius: 50% !important;
+  width: 32px !important;
+  height: 32px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.composer-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.composer-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.composer-action {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.composer-action:hover {
+  background-color: var(--bg-hover);
+}
+
+.composer-action .bp4-icon {
+  color: var(--text-secondary);
+}
+
+.composer-action span {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.image-upload-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.composer-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+@media (max-width: 768px) {
+  .composer-actions {
+    flex-wrap: wrap;
+  }
+  
+  .composer-action {
+    flex: 1;
+    justify-content: center;
+  }
+  
+  .composer-action span {
+    display: none;
+  }
+} 

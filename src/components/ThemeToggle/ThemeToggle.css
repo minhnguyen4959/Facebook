@@ -1,0 +1,41 @@
+.theme-toggle {
+  min-width: 36px !important;
+  min-height: 36px !important;
+  padding: 0 !important;
+  border-radius: 50% !important;
+  transition: background-color 0.2s, transform 0.3s;
+}
+
+.theme-toggle:hover {
+  background-color: var(--hover-overlay) !important;
+  transform: rotate(15deg);
+}
+
+.theme-toggle .bp4-icon {
+  color: var(--text-primary) !important;
+}
+
+.theme-transition {
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+@media (max-width: 900px) {
+  .theme-toggle {
+    display: none !important;
+  }
+}
+
+.theme-toggle-btn {
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50% !important;
+  background-color: var(--bg-hover) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: var(--icon-color) !important;
+}
+
+.theme-toggle-btn:hover {
+  background-color: var(--bg-hover) !important;
+} 

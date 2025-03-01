@@ -1,0 +1,59 @@
+.sponsored-section {
+  margin-bottom: 24px;
+}
+
+.sponsored-item {
+  display: flex;
+  gap: 12px;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  text-decoration: none;
+  margin-bottom: 8px;
+}
+
+.sponsored-item:hover {
+  background-color: var(--hover-overlay);
+}
+
+.sponsored-media {
+  width: 120px;
+  height: 80px;
+  border-radius: 8px;
+  flex-shrink: 0;
+  background-size: cover;
+  background-position: center;
+}
+
+.sponsored-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sponsored-title {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.sponsored-description {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.info-btn {
+  min-width: 32px !important;
+  min-height: 32px !important;
+  padding: 0 !important;
+  border-radius: 50% !important;
+}
+
+@media (max-width: 1260px) {
+  .sponsored-media {
+    width: 100px;
+    height: 70px;
+  }
+} 

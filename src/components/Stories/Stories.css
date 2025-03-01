@@ -1,0 +1,104 @@
+.stories {
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+
+.stories-container {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 8px 0;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.stories-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
+}
+
+.story-card {
+  flex: 0 0 auto;
+  width: 110px;
+  height: 200px;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.story-card:hover {
+  transform: scale(1.02);
+}
+
+.story-background {
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-card);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.story-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(transparent 50%, rgba(0, 0, 0, 0.7));
+}
+
+.story-avatar {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 4px solid #1877F2;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  background-color: var(--primary-color);
+}
+
+.story-avatar.your-story {
+  background-color: #1877F2;
+}
+
+.story-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.story-username {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  color: white;
+  font-size: 13px;
+  font-weight: 600;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  z-index: 1;
+}
+
+@media (max-width: 576px) {
+  .story-card {
+    width: 100px;
+    height: 180px;
+  }
+  
+  .story-avatar {
+    width: 36px;
+    height: 36px;
+  }
+} 

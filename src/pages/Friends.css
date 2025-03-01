@@ -1,0 +1,388 @@
+.friends-page {
+  padding: 16px 0;
+}
+
+.friends-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.friends-header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+  color: var(--text-primary);
+}
+
+.friends-search {
+  width: 240px;
+}
+
+.friends-container {
+  display: flex;
+  gap: 16px;
+}
+
+.friends-sidebar {
+  width: 360px;
+  flex-shrink: 0;
+}
+
+.friends-nav {
+  background-color: var(--bg-card);
+  border-radius: 8px;
+  box-shadow: var(--shadow-1);
+  padding: 8px;
+}
+
+.friends-nav button {
+  margin-bottom: 4px;
+  height: 52px;
+  border-radius: 8px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.friends-nav button:hover {
+  background-color: var(--bg-hover);
+}
+
+.friends-nav button.bp4-active {
+  background-color: var(--bg-hover);
+  color: var(--primary-color);
+}
+
+.request-count, .friends-count {
+  background-color: var(--bg-hover);
+  color: var(--text-secondary);
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.friends-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.friends-section {
+  background-color: var(--bg-card);
+  border-radius: 8px;
+  box-shadow: var(--shadow-1);
+  padding: 16px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.section-header h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+  color: var(--text-primary);
+}
+
+.friend-requests {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.friend-request-card {
+  display: flex;
+  gap: 16px;
+  padding: 12px;
+  border-radius: 8px;
+  background-color: var(--bg-card);
+  box-shadow: var(--shadow-1);
+}
+
+.friend-request-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.friend-request-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.friend-request-info {
+  flex: 1;
+}
+
+.friend-request-name {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: var(--text-primary);
+}
+
+.friend-request-mutual, .friend-request-time {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.friend-request-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.friend-suggestions {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.friend-suggestion-card {
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: var(--bg-card);
+  box-shadow: var(--shadow-1);
+}
+
+.friend-suggestion-avatar {
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%;
+  position: relative;
+}
+
+.friend-suggestion-avatar img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.friend-suggestion-info {
+  padding: 12px;
+}
+
+.friend-suggestion-name {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: var(--text-primary);
+}
+
+.friend-suggestion-mutual {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+}
+
+.friend-suggestion-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.friend-requests-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+.friend-suggestions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.friends-list-search {
+  width: 240px;
+}
+
+.friends-list-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+.friend-card {
+  display: flex;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 8px;
+  background-color: var(--bg-card);
+  box-shadow: var(--shadow-1);
+  transition: background-color 0.2s;
+}
+
+.friend-card:hover {
+  background-color: var(--bg-hover);
+}
+
+.friend-card-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.friend-card-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.friend-card-info {
+  flex: 1;
+}
+
+.friend-card-name {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: var(--text-primary);
+}
+
+.friend-card-mutual {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.friend-card-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+.empty-state .bp4-icon {
+  margin-bottom: 8px;
+}
+
+.birthdays-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.birthday-today h3, .birthday-upcoming h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 16px;
+  color: var(--text-primary);
+}
+
+.birthday-card {
+  display: flex;
+  gap: 16px;
+  padding: 12px;
+  border-radius: 8px;
+  background-color: var(--bg-card);
+  box-shadow: var(--shadow-1);
+  margin-bottom: 12px;
+}
+
+.birthday-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.birthday-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.birthday-info {
+  flex: 1;
+}
+
+.birthday-name {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: var(--text-primary);
+}
+
+.birthday-age, .birthday-date {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+@media (max-width: 992px) {
+  .friends-container {
+    flex-direction: column;
+  }
+  
+  .friends-sidebar {
+    width: 100%;
+  }
+  
+  .friends-nav {
+    display: flex;
+    overflow-x: auto;
+    padding: 8px;
+  }
+  
+  .friends-nav button {
+    margin-bottom: 0;
+    margin-right: 8px;
+    height: auto;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 768px) {
+  .friends-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .friends-search {
+    width: 100%;
+  }
+  
+  .friend-requests-grid, .friend-suggestions-grid, .friends-list-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .friend-suggestions {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .friend-suggestions {
+    grid-template-columns: 1fr;
+  }
+} 

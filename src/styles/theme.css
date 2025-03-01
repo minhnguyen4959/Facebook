@@ -1,0 +1,233 @@
+:root {
+  /* Màu sắc chính */
+  --primary-color: #1877F2;
+  --primary-hover: #166FE5;
+  --secondary-color: #42B72A;
+  --secondary-hover: #36A420;
+  
+  /* Màu nền */
+  --bg-main: #F0F2F5;
+  --bg-card: #FFFFFF;
+  --bg-hover: #F2F2F2;
+  --bg-active: #E4E6E9;
+  
+  /* Màu text */
+  --text-primary: #050505;
+  --text-secondary: #65676B;
+  --text-muted: #8A8D91;
+  
+  /* Màu khác */
+  --divider: #CED0D4;
+  --placeholder: #8A8D91;
+  --error: #F02849;
+  --success: #31A24C;
+  --warning: #F7B928;
+  
+  /* Shadow */
+  --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.1);
+  --shadow-2: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-3: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+  /* Transition */
+  --transition-speed: 0.2s;
+}
+
+/* Dark mode */
+.dark-mode {
+  /* Màu nền */
+  --bg-main: #18191A;
+  --bg-card: #242526;
+  --bg-hover: #3A3B3C;
+  --bg-active: #4E4F50;
+  
+  /* Màu text */
+  --text-primary: #E4E6EB;
+  --text-secondary: #B0B3B8;
+  --text-muted: #8A8D91;
+  
+  /* Màu khác */
+  --divider: #3E4042;
+  --placeholder: #8A8D91;
+  
+  /* Shadow */
+  --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.2);
+  --shadow-2: 0 2px 4px rgba(0, 0, 0, 0.2);
+  --shadow-3: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Cập nhật style cho các component Blueprint */
+.dark-mode .bp4-button {
+  background-color: var(--bg-card);
+  color: var(--text-primary);
+}
+
+.dark-mode .bp4-button:hover {
+  background-color: var(--bg-hover);
+}
+
+.dark-mode .bp4-input {
+  background-color: var(--bg-card);
+  color: var(--text-primary);
+  box-shadow: 0 0 0 1px var(--divider);
+}
+
+.dark-mode .bp4-input::placeholder {
+  color: var(--text-secondary);
+}
+
+.dark-mode .bp4-menu {
+  background-color: var(--bg-card);
+  color: var(--text-primary);
+}
+
+.dark-mode .bp4-menu-item {
+  color: var(--text-primary);
+}
+
+.dark-mode .bp4-menu-item:hover {
+  background-color: var(--bg-hover);
+}
+
+.dark-mode .bp4-popover .bp4-popover-content {
+  background-color: var(--bg-card);
+  color: var(--text-primary);
+}
+
+.dark-mode .bp4-popover .bp4-popover-arrow-fill {
+  fill: var(--bg-card);
+}
+
+.dark-mode .bp4-dialog {
+  background-color: var(--bg-card);
+  color: var(--text-primary);
+}
+
+.dark-mode .bp4-dialog-header {
+  background-color: var(--bg-card);
+  color: var(--text-primary);
+}
+
+.dark-mode .bp4-tabs {
+  color: var(--text-primary);
+}
+
+.dark-mode .bp4-tab {
+  color: var(--text-secondary);
+}
+
+.dark-mode .bp4-tab[aria-selected="true"] {
+  color: var(--primary-color);
+}
+
+.dark-mode .bp4-tab-indicator {
+  background-color: var(--primary-color);
+}
+
+.dark-mode .bp4-card {
+  background-color: var(--bg-card);
+  color: var(--text-primary);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--divider);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--text-muted);
+}
+
+.dark-mode ::-webkit-scrollbar-thumb {
+  background-color: var(--bg-active);
+}
+
+.dark-mode ::-webkit-scrollbar-thumb:hover {
+  background-color: var(--text-muted);
+}
+
+.theme-transition {
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* Blueprint overrides */
+.bp4-button {
+  box-shadow: none !important;
+}
+
+.bp4-button:focus {
+  outline: 2px solid var(--accent-blue) !important;
+  outline-offset: 2px !important;
+}
+
+.bp4-input {
+  box-shadow: none !important;
+  background-color: var(--bg-secondary) !important;
+  color: var(--text-primary) !important;
+}
+
+.bp4-input::placeholder {
+  color: var(--text-secondary) !important;
+}
+
+.bp4-menu {
+  background-color: var(--bg-primary) !important;
+  box-shadow: var(--shadow-2) !important;
+  border: 1px solid var(--divider) !important;
+}
+
+.bp4-menu-item {
+  color: var(--text-primary) !important;
+}
+
+.bp4-menu-item:hover {
+  background-color: var(--hover-overlay) !important;
+}
+
+.bp4-popover {
+  box-shadow: var(--shadow-2) !important;
+  border: 1px solid var(--divider) !important;
+}
+
+.bp4-popover .bp4-popover-content {
+  background-color: var(--bg-primary) !important;
+}
+
+.bp4-popover .bp4-popover-arrow-fill {
+  fill: var(--bg-primary) !important;
+}
+
+.bp4-popover .bp4-popover-arrow-border {
+  fill: var(--divider) !important;
+} 

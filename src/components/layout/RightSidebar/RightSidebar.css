@@ -1,0 +1,156 @@
+.right-sidebar {
+  width: 360px;
+  height: calc(100vh - 60px);
+  position: sticky;
+  top: 60px;
+  overflow-y: auto;
+  padding: 16px 8px;
+  background-color: var(--bg-main);
+  transition: background-color 0.3s;
+}
+
+.right-sidebar.dark-mode {
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+}
+
+.right-sidebar-section {
+  margin-bottom: 16px;
+}
+
+.right-sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 8px;
+  margin-bottom: 12px;
+}
+
+.right-sidebar-header h3 {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.right-sidebar-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.right-sidebar-divider {
+  height: 1px;
+  background-color: var(--divider);
+  margin: 16px 0;
+}
+
+.birthdays-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.birthday-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 12px;
+  border-radius: 8px;
+  transition: background-color 0.2s;
+}
+
+.birthday-item:hover {
+  background-color: var(--bg-hover);
+}
+
+.birthday-item .bp4-icon {
+  color: var(--primary-color);
+  margin-right: 12px;
+  font-size: 18px;
+}
+
+.birthday-item span {
+  font-size: 14px;
+  color: var(--text-primary);
+}
+
+.contacts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 12px;
+  border-radius: 8px;
+  transition: background-color 0.2s;
+  cursor: pointer;
+}
+
+.contact-item:hover {
+  background-color: var(--bg-hover);
+}
+
+.contact-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 12px;
+  position: relative;
+}
+
+.contact-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.contact-online-indicator {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--success);
+  border: 2px solid var(--bg-card);
+}
+
+.contact-name {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.right-sidebar-footer {
+  padding: 12px;
+  margin-top: 8px;
+}
+
+.right-sidebar-footer .bp4-button {
+  justify-content: center;
+  font-weight: 500;
+}
+
+@media (max-width: 1200px) {
+  .right-sidebar {
+    width: 280px;
+  }
+}
+
+@media (max-width: 992px) {
+  .right-sidebar {
+    display: none;
+  }
+}
+
+.right-sidebar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.right-sidebar::-webkit-scrollbar-thumb {
+  background-color: var(--divider);
+  border-radius: 4px;
+} 

@@ -1,0 +1,65 @@
+.create-room {
+  background-color: var(--bg-primary);
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  overflow-x: auto;
+  box-shadow: var(--shadow-1);
+}
+
+.create-room-btn {
+  background-color: var(--bg-secondary) !important;
+  color: var(--accent-blue) !important;
+  border-radius: 20px !important;
+  padding: 0 16px !important;
+  height: 40px !important;
+  border: 1px solid var(--divider) !important;
+  flex-shrink: 0;
+}
+
+.create-room-btn:hover {
+  background-color: var(--hover-overlay) !important;
+}
+
+.create-room-btn .bp4-icon {
+  color: var(--accent-blue) !important;
+}
+
+.online-friends {
+  display: flex;
+  gap: 8px;
+}
+
+.friend-avatar {
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.friend-avatar:hover {
+  transform: translateY(-2px);
+}
+
+.online-indicator {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #31A24C;
+  border: 2px solid var(--bg-primary);
+}
+
+@media (max-width: 640px) {
+  .create-room {
+    border-radius: 0;
+  }
+  
+  .create-room-btn {
+    padding: 0 12px !important;
+  }
+} 
