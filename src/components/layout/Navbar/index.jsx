@@ -1,71 +1,72 @@
-import React, { useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
-import { Button, Icon, InputGroup, Popover, Menu, MenuItem } from '@blueprintjs/core';
-import ThemeToggle from '../../ThemeToggle';
-import './Navbar.css';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { FaFacebook, FaSearch, FaHome, FaUserFriends, FaVideo, FaStore, FaGamepad, FaBell, FaCaretDown, FaUserCircle, FaMoon, FaSun } from 'react-icons/fa';
+import { useTheme } from '../../../context/ThemeContext';
+import {
+  NavbarContainer,
+  NavbarLeft,
+  FacebookLogo,
+  SearchContainer,
+  SearchIcon,
+  SearchInput,
+  NavbarCenter,
+  TabButton,
+  NavbarRight,
+  IconButton,
+  ProfileButton
+} from './styles';
 
 const Navbar = () => {
-  const [searchFocused, setSearchFocused] = useState(false);
-  
-  const userMenu = (
-    <Menu>
-      <MenuItem icon="user" text="Your Profile" />
-      <MenuItem icon="settings" text="Settings & Privacy" />
-      <MenuItem icon="help" text="Help & Support" />
-      <MenuItem icon="moon" text="Display & Accessibility" />
-      <MenuItem icon="log-out" text="Log Out" />
-    </Menu>
-  );
+  const { theme, toggleTheme } = useTheme();
+  const isDarkMode = theme.name === 'dark';
 
   return (
-    <nav className="navbar">
-      <div className="navbar__left">
-        <Link to="/" className="navbar__logo">
-          <Icon icon="social-media" size={30} color="#1877F2" />
-        </Link>
-        <div className={`navbar__search ${searchFocused ? 'focused' : ''}`}>
-          <Icon icon="search" />
-          <InputGroup
-            placeholder="Search Facebook"
-            onFocus={() => setSearchFocused(true)}
-            onBlur={() => setSearchFocused(false)}
-            className="navbar__search-input"
-          />
-        </div>
-      </div>
-
-      <div className="navbar__center">
-        <NavLink to="/" className="navbar__tab" activeClassName="active" exact>
-          <Icon icon="home" size={24} />
-        </NavLink>
-        <NavLink to="/watch" className="navbar__tab" activeClassName="active">
-          <Icon icon="video" size={24} />
-        </NavLink>
-        <NavLink to="/marketplace" className="navbar__tab" activeClassName="active">
-          <Icon icon="shop" size={24} />
-        </NavLink>
-        <NavLink to="/groups" className="navbar__tab" activeClassName="active">
-          <Icon icon="group-objects" size={24} />
-        </NavLink>
-        <NavLink to="/gaming" className="navbar__tab" activeClassName="active">
-          <Icon icon="games" size={24} />
-        </NavLink>
-      </div>
-
-      <div className="navbar__right">
-        <div className="navbar__actions">
-          <Button className="navbar__action-btn" icon="grid" minimal />
-          <Button className="navbar__action-btn" icon="chat" minimal />
-          <Button className="navbar__action-btn" icon="notifications" minimal />
-          <Popover content={userMenu} position="bottom-right">
-            <Button className="navbar__profile-btn">
-              <div className="avatar" style={{ backgroundColor: '#FFD700' }}></div>
-            </Button>
-          </Popover>
-        </div>
-        <ThemeToggle />
-      </div>
-    </nav>
+    <NavbarContainer>
+      <NavbarLeft>
+        <FacebookLogo to="/">
+          <FaFacebook />
+        </FacebookLogo>
+        <SearchContainer>
+          <SearchIcon>
+            <FaSearch />
+          </SearchIcon>
+          <SearchInput placeholder="Tìm kiếm trên Facebook" />
+        </SearchContainer>
+      </NavbarLeft>
+      
+      <NavbarCenter>
+        <TabButton to="/" active={true}>
+          <FaHome />
+        </TabButton>
+        <TabButton to="/friends">
+          <FaUserFriends />
+        </TabButton>
+        <TabButton to="/watch">
+          <FaVideo />
+        </TabButton>
+        <TabButton to="/marketplace">
+          <FaStore />
+        </TabButton>
+        <TabButton to="/gaming">
+          <FaGamepad />
+        </TabButton>
+      </NavbarCenter>
+      
+      <NavbarRight>
+        <ProfileButton>
+          <FaUserCircle />
+        </ProfileButton>
+        <IconButton onClick={toggleTheme}>
+          {isDarkMode ? <FaSun /> : <FaMoon />}
+        </IconButton>
+        <IconButton>
+          <FaBell />
+        </IconButton>
+        <IconButton>
+          <FaCaretDown />
+        </IconButton>
+      </NavbarRight>
+    </NavbarContainer>
   );
 };
 

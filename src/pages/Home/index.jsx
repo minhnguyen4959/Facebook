@@ -1,12 +1,16 @@
 import React from 'react';
-import Feed from '../../components/Feed';
-import './Home.css';
+import { HomeContainer } from './styles';
+import CreatePost from './components/CreatePost';
+import Stories from './components/Stories';
+import PostsList from './components/PostsList';
 
 const Home = () => {
   return (
-    <div className="home-page">
-      <Feed />
-    </div>
+    <HomeContainer>
+      <Stories />
+      <CreatePost />
+      <PostsList />
+    </HomeContainer>
   );
 };
 

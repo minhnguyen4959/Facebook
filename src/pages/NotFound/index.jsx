@@ -1,28 +1,32 @@
 import React from 'react';
-import { Button, Icon } from '@blueprintjs/core';
 import { Link } from 'react-router-dom';
-import './NotFound.css';
+import { FaFacebook, FaHome } from 'react-icons/fa';
+import {
+  NotFoundContainer,
+  NotFoundContent,
+  NotFoundLogo,
+  NotFoundTitle,
+  NotFoundText,
+  NotFoundButton
+} from './styles';
 
 const NotFound = () => {
   return (
-    <div className="not-found">
-      <div className="not-found__content">
-        <Icon icon="error" size={64} className="not-found__icon" />
-        <h1>404</h1>
-        <h2>Page Not Found</h2>
-        <p>The page you are looking for doesn't exist or has been moved.</p>
-        <div className="not-found__actions">
-          <Link to="/">
-            <Button icon="home" intent="primary" text="Go to Home" />
-          </Link>
-          <Button 
-            icon="arrow-left" 
-            text="Go Back" 
-            onClick={() => window.history.back()}
-          />
-        </div>
-      </div>
-    </div>
+    <NotFoundContainer>
+      <NotFoundContent>
+        <NotFoundLogo>
+          <FaFacebook />
+        </NotFoundLogo>
+        <NotFoundTitle>Trang này không khả dụng</NotFoundTitle>
+        <NotFoundText>
+          Liên kết bạn đã theo dõi có thể bị hỏng hoặc trang có thể đã bị xóa.
+        </NotFoundText>
+        <NotFoundButton as={Link} to="/">
+          <FaHome />
+          Đi đến Trang chủ
+        </NotFoundButton>
+      </NotFoundContent>
+    </NotFoundContainer>
   );
 };
 

@@ -1,127 +1,201 @@
 import React from 'react';
-import { Button, Icon } from '@blueprintjs/core';
-import { useTheme } from '../../../hooks/useTheme.jsx';
-import './RightSidebar.css';
+import { FaVideo, FaSearch, FaEllipsisH, FaGift } from 'react-icons/fa';
+import {
+  SidebarContainer,
+  SectionTitle,
+  ContactsHeader,
+  ContactsTitle,
+  ContactsActions,
+  ContactsAction,
+  ContactsList,
+  ContactItem,
+  ContactAvatar,
+  ContactName,
+  OnlineIndicator,
+  BirthdaySection,
+  BirthdayIcon,
+  BirthdayText,
+  SponsoredSection,
+  SponsoredItem,
+  SponsoredImage,
+  SponsoredContent,
+  SponsoredTitle,
+  SponsoredLink,
+  SponsoredRating,
+  Star
+} from './styles';
+
+// Dữ liệu mẫu cho danh sách liên hệ
+const contactsData = [
+  {
+    id: 1,
+    name: 'Minh Đức Hoàng',
+    avatar: 'https://i.pravatar.cc/150?img=1',
+    online: true
+  },
+  {
+    id: 2,
+    name: 'Lê Mạnh Đạt',
+    avatar: 'https://i.pravatar.cc/150?img=2',
+    online: true
+  },
+  {
+    id: 3,
+    name: 'Hoàng Mai',
+    avatar: 'https://i.pravatar.cc/150?img=3',
+    online: true
+  },
+  {
+    id: 4,
+    name: 'Lê Thanh Vân',
+    avatar: 'https://i.pravatar.cc/150?img=4',
+    online: true
+  },
+  {
+    id: 5,
+    name: 'Kiên Bùi',
+    avatar: 'https://i.pravatar.cc/150?img=5',
+    online: true
+  },
+  {
+    id: 6,
+    name: 'Hải Hà',
+    avatar: 'https://i.pravatar.cc/150?img=6',
+    online: true
+  },
+  {
+    id: 7,
+    name: 'Phạm Xuân Hiệu',
+    avatar: 'https://i.pravatar.cc/150?img=7',
+    online: true
+  },
+  {
+    id: 8,
+    name: 'Ngọc Quỳnh',
+    avatar: 'https://i.pravatar.cc/150?img=8',
+    online: true
+  },
+  {
+    id: 9,
+    name: 'Nguyễn Quang Minh',
+    avatar: 'https://i.pravatar.cc/150?img=9',
+    online: true
+  },
+  {
+    id: 10,
+    name: 'Phạm Quyền',
+    avatar: 'https://i.pravatar.cc/150?img=10',
+    online: true
+  },
+  {
+    id: 11,
+    name: 'Vương Nguyễn',
+    avatar: 'https://i.pravatar.cc/150?img=11',
+    online: true
+  },
+  {
+    id: 12,
+    name: 'Minh Anh',
+    avatar: 'https://i.pravatar.cc/150?img=12',
+    online: true
+  },
+  {
+    id: 13,
+    name: 'Hằng Lê',
+    avatar: 'https://i.pravatar.cc/150?img=13',
+    online: true
+  },
+  {
+    id: 14,
+    name: 'Phạm Trà Giang',
+    avatar: 'https://i.pravatar.cc/150?img=14',
+    online: true
+  },
+  {
+    id: 15,
+    name: 'Đặng Huy',
+    avatar: 'https://i.pravatar.cc/150?img=15',
+    online: true
+  },
+  {
+    id: 16,
+    name: 'Nguyễn Phương Quỳnh',
+    avatar: 'https://i.pravatar.cc/150?img=16',
+    online: true
+  },
+  {
+    id: 17,
+    name: 'Nguyễn Tiến Đạt',
+    avatar: 'https://i.pravatar.cc/150?img=17',
+    online: true
+  }
+];
 
 const RightSidebar = () => {
-  const { darkMode } = useTheme();
-  
-  const contacts = [
-    { 
-      id: 1, 
-      name: 'Nguyễn Văn B', 
-      avatar: 'https://i.pravatar.cc/150?img=11',
-      online: true
-    },
-    { 
-      id: 2, 
-      name: 'Trần Thị C', 
-      avatar: 'https://i.pravatar.cc/150?img=5',
-      online: true
-    },
-    { 
-      id: 3, 
-      name: 'Lê Văn D', 
-      avatar: 'https://i.pravatar.cc/150?img=12',
-      online: false
-    },
-    { 
-      id: 4, 
-      name: 'Phạm Thị E', 
-      avatar: 'https://i.pravatar.cc/150?img=9',
-      online: true
-    },
-    { 
-      id: 5, 
-      name: 'Hoàng Văn F', 
-      avatar: 'https://i.pravatar.cc/150?img=3',
-      online: false
-    }
-  ];
-  
-  const birthdays = [
-    {
-      id: 1,
-      name: 'Trần Thị C',
-      date: 'Hôm nay'
-    },
-    {
-      id: 2,
-      name: 'Lê Văn D',
-      date: 'Ngày mai'
-    }
-  ];
-  
-  const groups = [
-    { 
-      id: 1, 
-      name: 'Lập trình viên Việt Nam', 
-      avatar: `https://ui-avatars.com/api/?name=LTVN&background=4267B2&color=fff&size=128`,
-      unread: 3
-    },
-    { 
-      id: 2, 
-      name: 'React Developers', 
-      avatar: `https://ui-avatars.com/api/?name=RD&background=E7A33E&color=fff&size=128`,
-      unread: 0
-    },
-    { 
-      id: 3, 
-      name: 'Chia sẻ kiến thức UI/UX', 
-      avatar: `https://ui-avatars.com/api/?name=UIUX&background=F5533D&color=fff&size=128`,
-      unread: 5
-    }
-  ];
-
   return (
-    <div className={`right-sidebar ${darkMode ? 'dark-mode' : ''}`}>
-      <div className="right-sidebar-section">
-        <div className="right-sidebar-header">
-          <h3>Sinh nhật</h3>
-        </div>
-        
-        <div className="birthdays-list">
-          {birthdays.map(birthday => (
-            <div key={birthday.id} className="birthday-item">
-              <Icon icon="gift" size={16} />
-              <span>
-                Hôm nay là sinh nhật của <strong>{birthday.name}</strong>
-              </span>
-            </div>
-          ))}
-        </div>
-      </div>
+    <SidebarContainer>
+      <SectionTitle>Được tài trợ</SectionTitle>
+      <SponsoredSection>
+        <SponsoredItem>
+          <SponsoredImage src="https://picsum.photos/id/237/100/100" alt="Sponsored" />
+          <SponsoredContent>
+            <SponsoredTitle>Dual Identity: Beast Inside, Beauty Outside.</SponsoredTitle>
+            <SponsoredLink>lofree.co</SponsoredLink>
+          </SponsoredContent>
+        </SponsoredItem>
+        <SponsoredItem>
+          <SponsoredImage src="https://picsum.photos/id/238/100/100" alt="Sponsored" />
+          <SponsoredContent>
+            <SponsoredTitle>tradingview.com</SponsoredTitle>
+            <SponsoredRating>
+              <Star>★</Star>
+              <Star>★</Star>
+              <Star>★</Star>
+              <Star>★</Star>
+              <Star>★</Star>
+              (4,99/5,0)
+            </SponsoredRating>
+          </SponsoredContent>
+        </SponsoredItem>
+      </SponsoredSection>
+
+      <SectionTitle>Sinh nhật</SectionTitle>
+      <BirthdaySection>
+        <BirthdayIcon>
+          <FaGift />
+        </BirthdayIcon>
+        <BirthdayText>
+          Hôm nay là sinh nhật của <strong>Nguyễn Tiến Đạt</strong>.
+        </BirthdayText>
+      </BirthdaySection>
       
-      <div className="right-sidebar-divider"></div>
+      <ContactsHeader>
+        <ContactsTitle>Người liên hệ</ContactsTitle>
+        <ContactsActions>
+          <ContactsAction>
+            <FaVideo />
+          </ContactsAction>
+          <ContactsAction>
+            <FaSearch />
+          </ContactsAction>
+          <ContactsAction>
+            <FaEllipsisH />
+          </ContactsAction>
+        </ContactsActions>
+      </ContactsHeader>
       
-      <div className="right-sidebar-section">
-        <div className="right-sidebar-header">
-          <h3>Người liên hệ</h3>
-          <div className="right-sidebar-actions">
-            <Button icon="search" minimal={true} small={true} />
-            <Button icon="more" minimal={true} small={true} />
-          </div>
-        </div>
-        
-        <div className="contacts-list">
-          {contacts.map(contact => (
-            <div key={contact.id} className="contact-item">
-              <div className="contact-avatar">
-                <img src={contact.avatar} alt={contact.name} />
-                {contact.online && (
-                  <div className="contact-online-indicator"></div>
-                )}
-              </div>
-              <div className="contact-name">{contact.name}</div>
-            </div>
-          ))}
-        </div>
-      </div>
-      
-      <div className="right-sidebar-footer">
-        <Button icon="plus" text="Tạo nhóm chat mới" fill={true} minimal={true} />
-      </div>
-    </div>
+      <ContactsList>
+        {contactsData.map(contact => (
+          <ContactItem key={contact.id}>
+            <ContactAvatar>
+              <img src={contact.avatar} alt={contact.name} />
+              {contact.online && <OnlineIndicator />}
+            </ContactAvatar>
+            <ContactName>{contact.name}</ContactName>
+          </ContactItem>
+        ))}
+      </ContactsList>
+    </SidebarContainer>
   );
 };
 
